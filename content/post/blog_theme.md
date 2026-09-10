@@ -22,42 +22,30 @@ hugo主题使用[hugo-tranquilpeak-theme](https://github.com/kakawait/hugo-tranq
 
 #### 评论设置
 
-hugo-tranquilpeak-theme 仅支持disqus，但对于国内来说无法访问，这里修改了相关代码，使用[来必力](https://www.livere.com/)，注册来必力，选择免费的City版本安装
-
-删除默认的 layouts/partials/post/disqus.html 的代码，将安装代码注入即可
+hugo-tranquilpeak-theme 默认使用 Disqus，本站改用基于 GitHub Discussions 的 [Giscus](https://giscus.app/zh-CN)。评论按文章路径关联，并通过仓库的 Announcements 分类统一管理。
 
 ```html
-layouts/partials/post/disqus.html
+layouts/partials/post/giscus.html
 
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="你的uid">
-<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
+<script src="https://giscus.app/client.js"
+        data-repo="ThinkMo/thinkmo.github.io"
+        data-mapping="pathname"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
 </script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 ```
 
 #### 浏览统计
 
-浏览统计使用的是[不蒜子](https://busuanzi.ibruce.info/)
+浏览统计使用的是[不蒜子](https://www.busuanzi.cc/)
 
 修改hugo配置文件config.toml在[params]下添加相关js
 
 ```
   [[params.customJS]]
-    src = "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    src = "https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js"
 ```
 
 修改layouts/partials/footer.html在copyright下添加
@@ -66,11 +54,11 @@ layouts/partials/post/disqus.html
   <div class="busuanzi-count">
     <span class="site-uv">
       <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      <span class="busuanzi-value" id="busuanzi_site_uv"></span>
     </span>
     <span class="site-pv">
       <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      <span class="busuanzi-value" id="busuanzi_site_pv"></span>
     </span>
   </div>
 ```

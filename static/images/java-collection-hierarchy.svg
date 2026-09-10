@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="470" viewBox="0 0 920 470" role="img" aria-labelledby="title desc">
+  <title id="title">Java Collection Framework 接口层次</title>
+  <desc id="desc">Iterable 派生 Collection，Collection 派生 List、Set 和 Queue，Queue 派生 Deque；Map 是独立接口。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5 0 7z" fill="#607080"/></marker>
+    <style>
+      .box{fill:#f7fafc;stroke:#607080;stroke-width:2;rx:8}.map{fill:#fff4e6;stroke:#d97706}.text{font:600 18px system-ui,sans-serif;fill:#25313c;text-anchor:middle}.sub{font:14px system-ui,sans-serif;fill:#52606d;text-anchor:middle}.line{stroke:#607080;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <path class="line" d="M360 85V135"/><path class="line" d="M360 205V245H150V285"/><path class="line" d="M360 205V285"/><path class="line" d="M360 245H570V285"/><path class="line" d="M570 355V405"/>
+  <rect class="box" x="270" y="25" width="180" height="60"/><text class="text" x="360" y="62">Iterable</text>
+  <rect class="box" x="270" y="145" width="180" height="60"/><text class="text" x="360" y="182">Collection</text>
+  <rect class="box" x="60" y="295" width="180" height="60"/><text class="text" x="150" y="332">List</text>
+  <rect class="box" x="270" y="295" width="180" height="60"/><text class="text" x="360" y="332">Set</text>
+  <rect class="box" x="480" y="295" width="180" height="60"/><text class="text" x="570" y="332">Queue</text>
+  <rect class="box" x="480" y="405" width="180" height="60"/><text class="text" x="570" y="442">Deque</text>
+  <rect class="box map" x="700" y="145" width="180" height="60"/><text class="text" x="790" y="178">Map</text><text class="sub" x="790" y="197">独立于 Collection</text>
+</svg>
