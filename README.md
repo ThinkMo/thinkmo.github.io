@@ -17,7 +17,7 @@ hugo --gc --minify --panicOnWarning
 python scripts/check_site.py public
 ```
 
-检查脚本只使用 Python 3 标准库。文章位于 `content/`，图片位于 `static/images/`，主题源码及编译好的 CSS/JS 位于 `themes/hugo-tranquilpeak-theme/`，日常写作无需 Node.js、npm 或 Sass。
+检查脚本只使用 Python 3 标准库。文章位于 `content/`，图片位于 `static/images/`，主题源码及编译好的 CSS/JS 位于 `themes/hugo-tranquilpeak-theme/`，日常写作无需 Node.js、npm 或 Sass。主题附带的旧 Node/Grunt 依赖清单已移除：它们不参与站点构建，并包含大量无法沿原依赖链安全升级的历史开发依赖；如需重新编译主题前端资源，可从 Git 历史恢复并整体升级工具链。
 
 ## GitHub Pages
 
