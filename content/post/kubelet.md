@@ -1,4 +1,5 @@
 +++
+aliases = ["/2020/12/kubelet源码解析/", "/2020/12/kubelet源码解析上/"]
 keywords = ["k8s", 'kubelet']
 title = "kubelet源码解析-启动流程与POD处理(上)"
 categories = ["k8s"]

@@ -12,14 +12,11 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseurl = "https://itech.red"
-languageCode = "en-us"
+baseURL = "https://thinkmo.github.io/"
+locale = "zh-CN"
 defaultContentLanguage = "zh-cn"
 title = "平凡世界"
 theme = "hugo-tranquilpeak-theme"
-disqusShortname = "MTAyMC80ODIxMS8yNDcwNw=="
-googleAnalytics = "UA-82870469-1"
-paginate = 7
 canonifyurls = true
 enableRobotsTXT = true
 publishDir = "public"
@@ -32,7 +29,7 @@ publishDir = "public"
 #  tag = "tags"
 #  archive = "archives"
 
-[author]
+[params.author]
   name = "游"
   bio = "沉下心，多坚持"
   job = "SRE"
@@ -157,7 +154,7 @@ publishDir = "public"
   autoThumbnailImage = true
 
   # Your favicon path, default is "/favicon.png"
-  favicon = "/favicon.png"
+  favicon = "https://avatars.githubusercontent.com/u/6330242?s=64&v=4"
 
   # Header configuration
   # The link at the right of the header is customizable
@@ -188,3 +185,17 @@ publishDir = "public"
   # customJS = ["js/foo.js"]
   [[params.customJS]]
     src = "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+
+
+[pagination]
+  pagerSize = 7
+
+[services.disqus]
+  shortname = "MTAyMC80ODIxMS8yNDcwNw=="
+
+# Legacy posts contain trusted HTML, including images and tables.
+[markup.goldmark.renderer]
+  unsafe = true
+
+[caches.images]
+  dir = ':cacheDir/images'
