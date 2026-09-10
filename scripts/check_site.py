@@ -16,6 +16,20 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
+        if tag == 'script' and attrs.get('src', '').endswith(('cdn-city.livere.com/js/embed.dist.js', '.disqus.com/embed.js')):
+            errors.add(f'{self.relative}: contains a legacy comment provider')
+        if tag == 'script' and attrs.get('src') == 'https://giscus.app/client.js':
+            expected = {
+                'data-repo': 'ThinkMo/thinkmo.github.io',
+                'data-repo-id': 'MDEwOlJlcG9zaXRvcnk4NTIxMTg3OA==',
+                'data-category': 'Announcements',
+                'data-category-id': 'DIC_kwDOBRQ65s4DFThr',
+                'data-mapping': 'pathname',
+                'data-lang': 'zh-CN',
+            }
+            for key, value in expected.items():
+                if attrs.get(key) != value:
+                    errors.add(f'{self.relative}: invalid Giscus setting {key}')
         if tag == 'link' and attrs.get('rel') == 'canonical':
             if not attrs.get('href', '').startswith(origin):
                 errors.add(f'{self.relative}: incorrect canonical URL')
@@ -40,7 +54,9 @@ for relative in legacy_paths:
         errors.add(f'Missing legacy article URL: {relative}')
 pages = list(root.rglob('*.html'))
 for path in pages:
-    Page(path.relative_to(root).as_posix()).feed(path.read_text(encoding='utf-8'))
+    relative = path.relative_to(root).as_posix()
+    html = path.read_text(encoding='utf-8')
+    Page(relative).feed(html)
 if errors:
     sys.exit('\n'.join(sorted(errors)))
 print(f'Validated {len(pages)} HTML files and {len(legacy_paths)} legacy article URLs: OK.')

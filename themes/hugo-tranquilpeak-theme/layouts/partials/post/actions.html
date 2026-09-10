@@ -62,9 +62,9 @@
           </li>
         {{ end }}
       {{ end }}
-      {{ if and (not (eq .Params.comments false)) .Site.Config.Services.Disqus.Shortname }}
+      {{ if and (not (eq .Params.comments false)) .Site.Params.giscus.enabled }}
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <a class="post-action-btn btn btn--default" href="#comments">
             <i class="fa fa-comment-o"></i>
           </a>
         </li>

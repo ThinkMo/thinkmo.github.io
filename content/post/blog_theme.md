@@ -26,7 +26,7 @@ hugo-tranquilpeak-theme 仅支持disqus，但对于国内来说无法访问，�
 
 删除默认的 layouts/partials/post/disqus.html 的代码，将安装代码注入即可
 
-```
+```html
 layouts/partials/post/disqus.html
 
 <!-- 来必力City版安装代码 -->

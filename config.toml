@@ -190,8 +190,12 @@ publishDir = "public"
 [pagination]
   pagerSize = 7
 
-[services.disqus]
-  shortname = "MTAyMC80ODIxMS8yNDcwNw=="
+[params.giscus]
+  enabled = true
+  repo = "ThinkMo/thinkmo.github.io"
+  repoID = "MDEwOlJlcG9zaXRvcnk4NTIxMTg3OA=="
+  category = "Announcements"
+  categoryID = "DIC_kwDOBRQ65s4DFThr"
 
 # Legacy posts contain trusted HTML, including images and tables.
 [markup.goldmark.renderer]

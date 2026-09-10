@@ -34,10 +34,8 @@
               {{ end }}
             {{ end }}
             {{ partial "post/actions.html" . }}
-            {{ if not (eq .Params.comments false) }}
-              {{ if .Site.Config.Services.Disqus.Shortname }}
-                {{ partial "post/disqus.html" . }}
-              {{ end }}
+            {{ if and (not (eq .Params.comments false)) .Site.Params.giscus.enabled }}
+              {{ partial "post/giscus.html" . }}
             {{ end }}
           </div>
         </article>
