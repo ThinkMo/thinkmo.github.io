@@ -2,7 +2,7 @@
 keywords = ["transfromer"]
 title = "图解transfromer(译)"
 categories = ["llm"]
-disqusIdentifier = “llm_transformer"
+disqusIdentifier = "llm_transformer"
 comments = true
 clearReading = true
 date = 2026-09-11T10:31:44+08:00 
