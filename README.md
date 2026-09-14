@@ -13,8 +13,9 @@
 - `scripts/check_site.py`：构建结果检查脚本
 - `.github/workflows/hugo.yaml`：GitHub Pages 构建和部署工作流
 
-文章图片统一存放在 `static/images/<article-slug>/`，Markdown 中使用
-`/images/<article-slug>/<filename>` 的站点根路径引用。
+带本地图片的文章使用 Hugo 页面包：正文存放在
+`content/post/<article-slug>/index.md`，图片存放在同目录的 `images/` 中，
+Markdown 使用 `images/<filename>` 相对路径引用。
 
 ## 本地预览
 
