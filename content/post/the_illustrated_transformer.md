@@ -84,7 +84,7 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 注意，这些新向量的维度比嵌入向量小。它们的维度为 64，而嵌入向量以及编码器的输入、输出向量的维度都是 512。新向量的维度并非必须更小；这是一种架构设计选择，目的是让多头注意力的总计算量大体保持不变。
 
-![image.png](assets/mtz9e0b8-image.png)
+![image.png](/images/the-illustrated-transformer/mtz9e0b8-image.png)
 
 *将 \(x_1\) 乘以权重矩阵 \(W^Q\)，就会得到 \(q_1\)，即该词对应的“查询”向量。最终，我们会为输入句子中的每个词分别生成“查询”“键”和“值”三种投影表示。*
 
@@ -96,11 +96,11 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 分数通过点积计算得到：将当前词的查询向量，与被评分词的键向量做点积。因此，如果我们正在计算第 1 个位置上的词的自注意力，那么第一个分数就是 \(q_1\) 与 \(k_1\) 的点积，第二个分数就是 \(q_1\) 与 \(k_2\) 的点积。
 
-![image.png](assets/mtz9mspv-image.png)
+![image.png](/images/the-illustrated-transformer/mtz9mspv-image.png)
 
 **第三步和第四步是**：先将这些分数除以 8，再对结果进行 softmax 运算。这里的 8 是论文中键向量维度 64 的平方根，这样做**有助于使梯度更加稳定**。也可以采用其他缩放值，但这里默认使用这一数值。**Softmax 会将分数归一化**，使它们都为正数，并且总和为 1。
 
-![image.png](assets/mtz9xp12-image.png)
+![image.png](/images/the-illustrated-transformer/mtz9xp12-image.png)
 
 经过 softmax 得到的分数，决定了各个词的信息会以多大的比重体现在当前位置的表示中。显然，当前位置上的词本身会获得最高的 softmax 分数(自注意力不保证当前词对自身的注意力权重最高，其他词完全可能获得更高权重)，但有时，关注另一个与当前词相关的词也很有帮助。
 
@@ -108,7 +108,7 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 **第六步**，是将这些加权后的值向量相加。所得结果就是自注意力层在当前位置，也就是第一个词所在位置的输出。
 
-![image.png](assets/mtza0lc8-image.png)
+![image.png](/images/the-illustrated-transformer/mtza0lc8-image.png)
 
 至此，自注意力的计算就完成了。得到的向量可以继续传入前馈神经网络。不过，在实际实现中，为了提高处理速度，这些计算会以矩阵形式进行。现在我们已经从单个词的层面直观理解了计算过程，接下来就看看矩阵形式的计算。
 
@@ -116,13 +116,13 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 **第一步**是计算Query矩阵、Key矩阵和Value矩阵。我们先将各个词的嵌入向量排列成矩阵 \(X\)，再将 \(X\) 分别乘以训练得到的权重矩阵 \(W^Q\)、\(W^K\) 和 \(W^V\)。
 
-![image.png](assets/mtza5sue-image.png)
+![image.png](/images/the-illustrated-transformer/mtza5sue-image.png)
 
 *矩阵 \(X\) 中的每一行，都对应输入句子中的一个词。这里再次展示了嵌入向量与 q/k/v 向量在维度上的差异：前者为 512 维，在图中用 4 个方格示意；后者为 64 维，在图中用 3 个方格示意。*
 
 最后，由于采用了矩阵形式，我们可以将第二步到第六步合并为一个公式，用来计算自注意力层的输出。
 
-![image.png](assets/mtza7d8m-image.png)
+![image.png](/images/the-illustrated-transformer/mtza7d8m-image.png)
 
 ### 多头机制
 
@@ -131,33 +131,33 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 1. 它增强了模型关注不同位置的能力。在上面的例子中，\(z_1\) 确实包含了其他各个位置编码中的少量信息，但其中仍可能主要是当前词自身的信息。如果我们要翻译“The animal didn’t cross the street because it was too tired”（那只动物没有穿过街道，因为它太累了）这样的句子，知道“it”指代哪个词就会很有帮助。
 2. 它为注意力层提供了多个“表示子空间”。接下来我们会看到，在多头注意力中，查询、键和值的权重矩阵不再只有一组，而是有多组。这里的 Transformer 使用 8 个注意力头，因此每个编码器或解码器中的相应注意力模块都有 8 组权重矩阵。每组矩阵都会随机初始化。训练完成后，各组矩阵分别用于将输入嵌入向量，或来自下层编码器、解码器的向量，投影到不同的表示子空间。
 
-![image.png](assets/mtzacijz-image.png)
+![image.png](/images/the-illustrated-transformer/mtzacijz-image.png)
 
 *在多头注意力中，每个注意力头都有各自独立的 Q/K/V 权重矩阵，因此会生成不同的 Q/K/V 矩阵。与前面一样，我们将 \(X\) 分别乘以 \(W^Q\)、\(W^K\) 和 \(W^V\)，得到 \(Q\)、\(K\) 和 \(V\)。*
 
 如果使用不同的权重矩阵，将前面介绍的自注意力计算分别执行 8 次，就会得到 8 个不同的 \(Z\) 矩阵。
 
-![image.png](assets/mtzaeqy8-image.png)
+![image.png](/images/the-illustrated-transformer/mtzaeqy8-image.png)
 
 这就带来了一个小问题：前馈层需要的输入并不是 8 个矩阵，而是一个矩阵，其中每个词对应一个向量。因此，我们需要想办法将这 8 个矩阵合并成一个矩阵。
 
 具体怎么做呢？先将这些矩阵拼接起来，再乘以一个额外的权重矩阵 \(W^O\)。
 
-![image.png](assets/mtzaf05h-image.png)
+![image.png](/images/the-illustrated-transformer/mtzaf05h-image.png)
 
 多头自注意力的主要内容基本就是这些。我知道，这里面涉及的矩阵确实不少。下面我试着把它们放进同一张图中，方便我们集中查看。
 
-![image.png](assets/mtzafjtt-image.png)
+![image.png](/images/the-illustrated-transformer/mtzafjtt-image.png)
 
 现在我们已经了解了注意力头，再回到前面的例句，看看在对“it”进行编码时，不同注意力头分别关注哪些地方：
 
-![image.png](assets/mtzagocy-image.png)
+![image.png](/images/the-illustrated-transformer/mtzagocy-image.png)
 
 *在对“it”进行编码时，一个注意力头主要关注“the animal”，另一个则主要关注“tired”（累的）。从某种意义上说，模型对“it”的表示，同时融入了“animal”和“tired”的部分表示信息。*
 
 不过，如果把所有注意力头都加入图中，结果就会变得更难解读：
 
-![image.png](assets/mtzahzb6-image.png)
+![image.png](/images/the-illustrated-transformer/mtzahzb6-image.png)
 
 ### 位置编码
 
@@ -165,13 +165,13 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 为了解决这个问题，Transformer 会在每个输入嵌入向量上加上一个向量。这些附加向量遵循特定的模式，模型可以学习利用这种模式，判断每个词的位置，或者序列中不同词之间的距离。直观地说，将这些数值加入嵌入向量后，当嵌入向量被投影为 Q/K/V 向量并参与点积注意力计算时，模型就能够利用其中蕴含的位置信息.
 
-![image.png](assets/mtzajq3d-image.png)
+![image.png](/images/the-illustrated-transformer/mtzajq3d-image.png)
 
 *为了让模型感知词的顺序，我们加入了位置编码向量，这些向量中的数值遵循特定的模式。*
 
 假设嵌入向量的维度为 4，那么实际的位置编码会如下所示：
 
-![image.png](assets/mtzam2qp-image.png)
+![image.png](/images/the-illustrated-transformer/mtzam2qp-image.png)
 
 *一个实际的位置编码示例，为便于演示，将嵌入维度设为 4。*
 
@@ -179,7 +179,7 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 在下图中，每一行都对应一个位置编码向量。因此，第一行就是要加到输入序列中第一个词的嵌入向量上的向量。每行包含 512 个数值，每个数值都介于 −1 和 1 之间。我们用颜色表示这些数值，以便直观地观察它们的模式。
 
-![image.png](assets/mtzaopgm-image.png)
+![image.png](/images/the-illustrated-transformer/mtzaopgm-image.png)
 
 *这是一个实际的位置编码示例，包含 20 个词的位置（行），嵌入维度为 512（列）。可以看到，图像似乎从中间分成了左右两半。这是因为左半部分的数值由一个使用正弦的函数生成，右半部分则由另一个使用余弦的函数生成。随后，将这两部分拼接起来，形成每个位置的位置编码向量。*
 
@@ -187,21 +187,21 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 2020 年 7 月更新：上面展示的位置编码来自 Tensor2Tensor 对 Transformer 的实现。论文中的方法略有不同：它不是直接拼接这两种信号，而是将它们交错排列。下图展示了这种排列方式，并附有生成它的代码：
 
-![image.png](assets/mtzargur-image.png)
+![image.png](/images/the-illustrated-transformer/mtzargur-image.png)
 
 ### 残差连接
 
 在继续之前，还需要介绍编码器架构中的一个细节：每个编码器中的每个子层，包括自注意力子层和前馈神经网络子层，都有一条经过该子层的残差连接，并且在残差相加之后执行层归一化（Layer Normalization）。
 
-![image.png](assets/mtzqcxqc-image.png)
+![image.png](/images/the-illustrated-transformer/mtzqcxqc-image.png)
 
 如果将自注意力相关的向量以及层归一化操作可视化，就会如下图所示：
 
-![image.png](assets/mtzqdvbs-image.png)
+![image.png](/images/the-illustrated-transformer/mtzqdvbs-image.png)
 
 解码器中的各个子层也采用同样的结构。如果一个 Transformer 包含堆叠的两层编码器和两层解码器，那么它的结构大致如下：
 
-![image.png](assets/mtzqf6hn-image.png)
+![image.png](/images/the-illustrated-transformer/mtzqf6hn-image.png)
 
 ## 解码
 
@@ -233,7 +233,7 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 接着，Softmax 层将这些分数转换为概率，所有概率均为正数，且总和为 1。我们选择概率最高的分量，并将它对应的词作为当前时间步的输出。
 
-![image.png](assets/mtzqxrfv-image.png)
+![image.png](/images/the-illustrated-transformer/mtzqxrfv-image.png)
 
 *这张图从底部开始，展示了解码器堆栈输出的向量如何最终转换为一个输出词。*
 
@@ -245,12 +245,12 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 为了直观展示这个过程，假设输出词表中只有六个词或符号：“a”“am”“i”“thanks”“student”和“<eos>”。其中，<eos> 是“end of sentence”的缩写，表示句子结束。
 
-![image.png](assets/mtzr0d4x-image.png)
+![image.png](/images/the-illustrated-transformer/mtzr0d4x-image.png)
 *模型的输出词表是在训练开始之前的数据预处理阶段建立的。*
 
 确定输出词表之后，就可以用一个维度等于词表大小的向量来表示词表中的每个词。这种表示方式称为独热编码（one-hot encoding）。例如，我们可以用下面的向量表示“am”：
 
-![image.png](assets/mtzr1p1d-image.png)
+![image.png](/images/the-illustrated-transformer/mtzr1p1d-image.png)
 
 回顾完这些内容后，我们来讨论模型的损失函数。它是训练阶段要优化的指标，我们希望通过优化它，最终得到一个预测非常准确的模型。
 
@@ -260,7 +260,7 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 
 这意味着，我们希望模型输出一个指向“thanks”这个词的概率分布。但由于模型还没有经过训练，它目前不太可能做到这一点。
 
-![image.png](assets/mtzr3xta-image.png)
+![image.png](/images/the-illustrated-transformer/mtzr3xta-image.png)
 *由于模型的参数，也就是权重，都是随机初始化的，尚未训练的模型会生成一个概率分布，其中各个分量，也就是各个词对应的概率值，还没有学到应有的规律。我们可以将这个分布与正确的目标输出进行比较，再利用反向传播调整模型的权重，使输出更接近我们期望的结果。*
 
 如何比较两个概率分布呢？我们只需将一个减去另一个。更多细节可以参考[交叉熵](https://colah.github.io/posts/2015-09-Visual-Information/)和 [Kullback–Leibler 散度](https://www.countbayesie.com/blog/2017/5/9/kullback-leibler-divergence-explained)（KL 散度）。
@@ -272,17 +272,16 @@ decoder同时包含以上两层，同时在两层之间还包含一层注意力�
 - 第二个概率分布中，“am”对应的分量具有最高概率。
 - 依此类推，直到第五个输出分布指向“<end of sentence>”，即句子结束符。这个符号在包含 10,000 个元素的词表中，也有一个对应的分量。
 
-![image.png](assets/mtzr80tj-image.png)
+![image.png](/images/the-illustrated-transformer/mtzr80tj-image.png)
 
 *图中展示了一个示例句子的目标概率分布，模型将以这些分布为目标进行训练。*
 
 在足够大的数据集上对模型进行充分训练后，我们希望它生成的概率分布如下所示：
 
-![image.png](assets/mtzr9xbt-image.png)
+![image.png](/images/the-illustrated-transformer/mtzr9xbt-image.png)
 
 *我们希望模型在训练完成后，能够输出预期的正确译文。当然，如果这个句子本身就出现在训练集中，那么仅凭这一结果，并不能真正说明模型的泛化能力，相关内容可参考交叉验证。注意，概率向量中的每个分量都会得到一点概率，即使对应的词几乎不可能成为当前时间步的输出。这是 softmax 的一个有用性质，有助于训练过程。*
 
 由于模型每次只生成一个输出，我们可以让它每一步都从概率分布中选择概率最高的词，并舍弃其他候选。这是一种解码方式，称为“贪心解码”（greedy decoding）。另一种方式是先保留概率最高的两个词，例如“I”和“a”；然后在下一步分别运行模型：一次假设第一个输出词是“I”，另一次假设第一个输出词是“a”。接着，综合考虑第 1 和第 2 个位置的结果，保留误差较小的候选。再继续处理第 2、第 3 个位置，依此类推。这种方法称为“束搜索”（beam search）。在本例中，beam_size 为 2，表示搜索过程中会保留两个部分假设，也就是尚未完成的候选译文；top_beams 也为 2，表示最终返回两个译文。这两个值都是可以通过实验调整的超参数。
 
 ## Q & A
-

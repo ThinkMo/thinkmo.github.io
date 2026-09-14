@@ -13,6 +13,9 @@
 - `scripts/check_site.py`：构建结果检查脚本
 - `.github/workflows/hugo.yaml`：GitHub Pages 构建和部署工作流
 
+文章图片统一存放在 `static/images/<article-slug>/`，Markdown 中使用
+`/images/<article-slug>/<filename>` 的站点根路径引用。
+
 ## 本地预览
 
 安装 Hugo `0.166.0`，然后运行：
