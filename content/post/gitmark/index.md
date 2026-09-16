@@ -1,6 +1,6 @@
 +++
 keywords = ["GitMark", "GitHub Pages", "Hugo", "Markdown", "Chrome extension"]
-title = "GitMark：直接在浏览器里编辑 GitHub Pages 和 Hugo 博客"
+title = "GitMark：在浏览器中直接编辑Markdown的Chrome插件"
 slug = "gitmark"
 categories = ["tools"]
 disqusIdentifier = "gitmark"
@@ -13,7 +13,7 @@ showTags = true
 showDate = true
 +++
 
-维护 GitHub Pages 或 Hugo 博客时，经常只想改一个错字、补一段说明或上传一张图片，却仍要拉取仓库、打开编辑器、执行 Git 命令再推送。电脑上没有准备好开发环境时，这套流程更显得麻烦。
+在维护 GitHub Pages 或 Hugo 博客时，经常只想改一个错字、补一段说明或上传一张图片，却仍要拉取仓库、打开编辑器、执行 Git 命令再推送。电脑上没有准备好开发环境时，这套流程更显得麻烦。
 
 [GitMark](https://github.com/ThinkMo/gitmark) 是我为这类场景开发的一款开源 Chrome 扩展。它可以直接读取 GitHub 仓库里的 Markdown 文件，在浏览器中完成编辑、预览和提交，也可以新建文章。提交完成后，原有的 GitHub Pages 或 GitHub Actions 工作流继续负责构建和发布网站。
 
