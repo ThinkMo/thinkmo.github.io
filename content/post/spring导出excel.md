@@ -10,6 +10,11 @@ clearReading = true
 keywords = ["springmvc"]
 title = "springmvc实现导出数据excel"
 categories = [ "java" ]
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 
 springmvc实现导出数据excel

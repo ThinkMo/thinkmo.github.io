@@ -52,6 +52,10 @@ legacy_paths = Path(__file__).with_name('legacy-paths.txt').read_text(encoding='
 for relative in legacy_paths:
     if not (root / relative).is_file():
         errors.add(f'Missing legacy article URL: {relative}')
+retired_paths = Path(__file__).with_name('retired-paths.txt').read_text(encoding='utf-8').splitlines()
+for relative in retired_paths:
+    if (root / relative).is_file():
+        errors.add(f'Retired article URL unexpectedly published: {relative}')
 pages = list(root.rglob('*.html'))
 for path in pages:
     relative = path.relative_to(root).as_posix()
@@ -59,4 +63,4 @@ for path in pages:
     Page(relative).feed(html)
 if errors:
     sys.exit('\n'.join(sorted(errors)))
-print(f'Validated {len(pages)} HTML files and {len(legacy_paths)} legacy article URLs: OK.')
+print(f'Validated {len(pages)} HTML files, {len(legacy_paths)} legacy URLs, and {len(retired_paths)} retired URLs: OK.')

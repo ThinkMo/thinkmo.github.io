@@ -10,6 +10,11 @@ clearReading = true
 keywords = ["springmvc"]
 title = "Spring＋Mybatis＋Velocity项目搭建"
 categories = [ "java" ]
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 Spring＋Mybatis＋Velocity项目搭建
 

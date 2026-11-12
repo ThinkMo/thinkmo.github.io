@@ -1,0 +1,55 @@
+baseURL = "https://thinkmo.github.io/"
+locale = "zh-CN"
+title = "新境世界"
+theme = "noesis"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+# 保留旧文章 URL 结构,勿改动
+[permalinks]
+  post = "/:year/:month/:slug/"
+
+[taxonomies]
+  category = "categories"
+
+[params]
+  description = "新境世界:AI Agent × Infra,OPC 探索与实践"
+  mainSections = ["post"]
+  cardReadMoreText = "阅读全文"
+  # 卡片摘要长度(字符数),无 description 的旧文章自动摘要统一截断
+  cardDescriptionLength = 120
+
+  [params.author]
+    name = "新镜"
+    location = "杭州"
+
+  [params.socials]
+    email = "mailto:tryit0714@gmail.com"
+    github = "https://github.com/ThinkMo"
+
+  [params.navigation]
+    rssInMenu = true
+
+# Giscus 评论(由 layouts/_partials/disqus.html 覆盖模板注入)
+[params.giscus]
+  enabled = true
+  repo = "ThinkMo/thinkmo.github.io"
+  repoID = "MDEwOlJlcG9zaXRvcnk4NTIxMTg3OA=="
+  category = "Announcements"
+  categoryID = "DIC_kwDOBRQ65s4DFThr"
+
+[markup]
+  [markup.highlight]
+    style = "evergarden"
+  [markup.goldmark.renderer]
+    # Legacy posts contain trusted HTML, including images and tables.
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+[caches.images]
+  dir = ':cacheDir/images'

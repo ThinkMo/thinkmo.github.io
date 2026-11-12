@@ -4,6 +4,11 @@ date = "2016-06-17T21:03:24+08:00"
 url = "/2016/06/认识linux内核网络参数/"
 categories = []
 clearReading = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 <!-- Recovered article body from forfreedom a3ffc19; original Markdown was absent. -->
 

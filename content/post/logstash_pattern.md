@@ -10,6 +10,11 @@ showSocial = false
 showPagination = true
 showTags = true
 showDate = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 ### Logstash过滤插件grok正则解析
 #### 一、grok介绍

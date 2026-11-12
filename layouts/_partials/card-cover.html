@@ -1,0 +1,22 @@
+{{- $page := . -}}
+{{- $cover := $page.Resources.GetMatch "featuredImage" -}}
+{{- $coverSrc := "" -}}
+{{- if not $cover -}}
+  {{- $images := findRE `!\[[^\]]*\]\([^)]+\)` $page.RawContent 1 -}}
+  {{- with index $images 0 -}}
+    {{- $src := replaceRE `^!\[[^\]]*\]\(` `` . -}}
+    {{- $src = replaceRE `\)$` `` $src -}}
+    {{- if and $src (not (strings.HasPrefix $src "http")) (not (strings.HasPrefix $src "/")) -}}
+      {{- $cover = $page.Resources.GetMatch $src -}}
+    {{- else if $src -}}
+      {{- $coverSrc = $src -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not (or $cover $coverSrc) -}}
+  {{- $cat := "" -}}
+  {{- with $page.Params.categories }}{{ with index . 0 }}{{ $cat = lower . }}{{ end }}{{ end -}}
+  {{- if $cat }}{{ $cover = resources.GetMatch (printf "covers/%s.svg" $cat) }}{{ end -}}
+  {{- if not $cover }}{{ $cover = resources.GetMatch "covers/default.svg" }}{{ end -}}
+{{- end -}}
+{{- return (dict "resource" $cover "src" $coverSrc "alt" $page.Title) -}}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#efe9df"/>
+  <text x="200" y="262" text-anchor="middle" font-family="Georgia, 'Songti SC', serif" font-size="196" fill="#8a7f6d">镜</text>
+  <line x1="168" y1="300" x2="232" y2="300" stroke="#8a7f6d" stroke-width="3" opacity=".6"/>
+</svg>

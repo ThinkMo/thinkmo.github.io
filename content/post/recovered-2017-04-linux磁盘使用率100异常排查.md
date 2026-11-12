@@ -4,6 +4,11 @@ date = "2017-04-01T18:00:54+08:00"
 url = "/2017/04/linux磁盘使用率100异常排查/"
 categories = []
 clearReading = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 <!-- Recovered article body from forfreedom a3ffc19; original Markdown was absent. -->
 

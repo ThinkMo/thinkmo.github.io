@@ -10,6 +10,11 @@ showSocial = false
 showPagination = true
 showTags = true
 showDate = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
    
 考虑到目前使用的ELK集群版本与开源版本的版本差距有点大，而ELK5.6相较2.3版本性能有较大提升，尤其是Logstash grok插件，最近对测试环境的两个ELK集群进行了升级，对升级过程进行一个记录；升级主要参考了官方[文档](https://www.elastic.co/guide/en/elastic-stack/5.6/upgrading-elastic-stack.html)

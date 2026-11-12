@@ -1,0 +1,30 @@
+{{ $coverData := partial "card-cover.html" . }}
+{{ $cover := $coverData.resource }}
+{{ $coverSrc := $coverData.src }}
+{{ $coverAlt := $coverData.alt }}
+<a href="{{ .RelPermalink }}" class="card blog-card{{ if not (or $cover $coverSrc) }} blog-card-text-only{{ end }}" rel="bookmark" aria-label="{{ .Title | plainify }}">
+  {{ with $cover }}
+  <div class="card-img-container">
+    {{ partial "responsive-image.html" (dict
+      "image" .
+      "class" "card-img"
+      "alt" $coverAlt
+      "widths" (slice 400 800 1200)
+      "sizes" "(min-width: 760px) 176px, (min-width: 600px) 152px, calc(100vw - 2 * clamp(1.25rem, 4vw, 2.5rem))"
+    ) }}
+  </div>
+  {{- else with $coverSrc }}
+  <div class="card-img-container">
+    <img src="{{ . }}" class="card-img" alt="{{ $coverAlt }}" loading="lazy" decoding="async">
+  </div>
+  {{- end }}
+  <article class="card-body">
+    <div class="card-subtext muted-text">
+      {{ if isset .Params "date" }}<p><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></p>{{ end }}
+      {{ if (isset .Params "categories") }}<p>{{ delimit .Params.categories ", " }}</p>{{ end }}
+    </div>
+    <h2 class="card-title">{{ .Title | markdownify }}</h2>
+    <p class="card-text">{{ partial "card-description.html" . }}</p>
+    <span class="card-read-more">{{ site.Params.cardReadMoreText | default "阅读全文" }}</span>
+  </article>
+</a>

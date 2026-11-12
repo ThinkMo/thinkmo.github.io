@@ -1,0 +1,21 @@
+{{- /* 覆盖 Hugo 内置 disqus partial:文章页注入 Giscus 评论(与 scripts/check_site.py 校验项保持一致) */ -}}
+{{- $giscus := .Site.Params.giscus | default dict -}}
+{{- if and $giscus.enabled (eq .Section "post") .IsPage -}}
+<section class="comments" aria-label="评论区">
+  <script src="https://giscus.app/client.js"
+    data-repo="ThinkMo/thinkmo.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnk4NTIxMTg3OA=="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOBRQ65s4DFThr"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async></script>
+</section>
+{{- end -}}

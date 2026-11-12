@@ -10,6 +10,11 @@ showSocial = false
 showPagination = true
 showTags = true
 showDate = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 
 最近接手维护了几个ELK集群，对接的是IaaS、PaaS服务日志，简单的ELK架构，通过filebeat采集日志，发送到logstash结构化日志然后发送到ElasticSearch，用户可以通过Kibana查看服务日志定位问题、做一些性能分析图表等，同时利用elastalert做日志报警。

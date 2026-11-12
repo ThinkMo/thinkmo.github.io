@@ -4,6 +4,11 @@ date = "2017-07-21T16:18:29+08:00"
 url = "/2017/07/ansible自动化部署配置工具/"
 categories = []
 clearReading = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 <!-- Recovered article body from forfreedom a3ffc19; original Markdown was absent. -->
 

@@ -4,6 +4,11 @@ date = "2017-04-27T18:55:34+08:00"
 url = "/2017/04/shell条件测试总结/"
 categories = []
 clearReading = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 <!-- Recovered article body from forfreedom a3ffc19; original Markdown was absent. -->
 

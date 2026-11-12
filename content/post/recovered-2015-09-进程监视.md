@@ -4,6 +4,11 @@ date = "2015-09-10T10:07:34+08:00"
 url = "/2015/09/进程监视/"
 categories = []
 clearReading = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 <!-- Recovered article body from forfreedom a3ffc19; original Markdown was absent. -->
 

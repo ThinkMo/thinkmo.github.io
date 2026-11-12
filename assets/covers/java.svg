@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f0e3da"/>
+  <text x="42" y="158" font-family="Georgia, 'Songti SC', serif" font-size="52" fill="#a05c40" letter-spacing="3">JAVA</text>
+  <line x1="45" y1="180" x2="115" y2="180" stroke="#a05c40" stroke-width="2" opacity=".6"/>
+  <circle cx="352" cy="248" r="6" fill="#a05c40" opacity=".45"/>
+</svg>

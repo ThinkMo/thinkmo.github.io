@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#e6e3db"/>
+  <text x="42" y="158" font-family="Georgia, 'Songti SC', serif" font-size="52" fill="#5c5a52" letter-spacing="3">LINUX</text>
+  <line x1="45" y1="180" x2="115" y2="180" stroke="#5c5a52" stroke-width="2" opacity=".6"/>
+  <circle cx="352" cy="248" r="6" fill="#5c5a52" opacity=".45"/>
+</svg>

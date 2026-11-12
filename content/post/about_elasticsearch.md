@@ -10,6 +10,11 @@ showSocial = false
 showPagination = true
 showTags = true
 showDate = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 
 > 摘自[designing the perfect elasticsearch cluster ](https://thoughts.t37.net/designing-the-perfect-elasticsearch-cluster-the-almost-definitive-guide-e614eabc1a87)

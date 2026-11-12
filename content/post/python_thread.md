@@ -10,6 +10,11 @@ showSocial = false
 showPagination = true
 showTags = true
 showDate = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 
 #### python GIL与多线程

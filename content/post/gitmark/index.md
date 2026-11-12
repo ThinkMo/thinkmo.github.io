@@ -1,8 +1,8 @@
 +++
 keywords = ["GitMark", "GitHub Pages", "Hugo", "Markdown", "Chrome extension"]
-title = "GitMark：在浏览器中直接编辑Markdown的Chrome插件"
+title = "在浏览器中直接编辑 Markdown 并提交 Git Pages"
 slug = "gitmark"
-categories = ["tools"]
+categories = ["projects"]
 disqusIdentifier = "gitmark"
 comments = true
 clearReading = true

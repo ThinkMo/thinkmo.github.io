@@ -4,6 +4,11 @@ date = "2016-05-11T10:23:54+08:00"
 url = "/2016/05/c语言结构体封装/"
 categories = []
 clearReading = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 <!-- Recovered article body from forfreedom a3ffc19; original Markdown was absent. -->
 

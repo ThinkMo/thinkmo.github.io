@@ -10,6 +10,11 @@ clearReading = true
 keywords = ["UML"]
 title = "理解UML类图关系"
 categories = [ "基础" ]
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 理解UML类图关系
 

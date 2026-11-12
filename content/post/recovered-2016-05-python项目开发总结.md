@@ -4,6 +4,11 @@ date = "2016-05-27T13:27:04+08:00"
 url = "/2016/05/python项目开发总结/"
 categories = []
 clearReading = true
+
+[build]
+  render = false
+  list = false
+  publishResources = false
 +++
 <!-- Recovered article body from forfreedom a3ffc19; original Markdown was absent. -->
 
