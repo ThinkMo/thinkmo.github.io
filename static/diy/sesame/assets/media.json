@@ -1,0 +1,98 @@
+[
+  {
+    "id": "intro",
+    "file": "assets/videos/intro.mp4",
+    "poster": "assets/videos/intro.webp",
+    "duration": 22.01,
+    "title": "Sesame 原版演示",
+    "description": "原作者发布的 Sesame 演示视频前 22 秒：站立、行走与表情。你的成品也应能做到这些动作。",
+    "width": 1280,
+    "height": 720,
+    "size": 3887937,
+    "source": "YouTube 视频 1UDsWkcQZhc，截取 0–22 秒"
+  },
+  {
+    "id": "11712",
+    "file": "assets/videos/11712.mp4",
+    "poster": "assets/videos/11712.webp",
+    "duration": 99.5,
+    "title": "成品动作展示",
+    "description": "实拍橙色 Sesame 的多种姿态与动作，用作整机效果参考。",
+    "width": 406,
+    "height": 720,
+    "size": 6142939,
+    "source": "11712.mp4"
+  },
+  {
+    "id": "11713",
+    "file": "assets/videos/11713.mp4",
+    "poster": "assets/videos/11713.webp",
+    "duration": 25.93,
+    "title": "手机遥控实录",
+    "description": "展示手机控制页面与机器人动作的对应关系。",
+    "width": 406,
+    "height": 720,
+    "size": 1586071,
+    "source": "11713.mp4"
+  },
+  {
+    "id": "VID_20260620_181323",
+    "file": "assets/videos/VID_20260620_181323.mp4",
+    "poster": "assets/videos/VID_20260620_181323.webp",
+    "duration": 7.38,
+    "title": "电子组件与线束概览",
+    "description": "展示拆分摆放的外壳、电子模块与接线，辅助辨认组件。",
+    "width": 406,
+    "height": 720,
+    "size": 557115,
+    "source": "VID_20260620_181323.mp4"
+  },
+  {
+    "id": "VID_20260620_181444",
+    "file": "assets/videos/VID_20260620_181444.mp4",
+    "poster": "assets/videos/VID_20260620_181444.webp",
+    "duration": 57.5,
+    "title": "供电与万用表测量",
+    "description": "实拍供电模块、接线与万用表测量过程，配合供电检查章节。",
+    "width": 406,
+    "height": 720,
+    "size": 5484905,
+    "source": "VID_20260620_181444.mp4"
+  },
+  {
+    "id": "VID_20260627_190906",
+    "file": "assets/videos/VID_20260627_190906.mp4",
+    "poster": "assets/videos/VID_20260627_190906.webp",
+    "duration": 24.53,
+    "title": "遥控与动作验收",
+    "description": "展示手机遥控操作及机器人姿态变化。",
+    "width": 406,
+    "height": 720,
+    "size": 1460337,
+    "source": "VID_20260627_190906.mp4"
+  },
+  {
+    "id": "VID_20260627_191244",
+    "file": "assets/videos/VID_20260627_191244.mp4",
+    "poster": "assets/videos/VID_20260627_191244.webp",
+    "duration": 27.83,
+    "title": "成品结构与底部展示",
+    "description": "从外观与底部观察机器人结构和供电布局。",
+    "width": 406,
+    "height": 720,
+    "size": 2204993,
+    "source": "VID_20260627_191244.mp4"
+  },
+  {
+    "id": "robot",
+    "file": "assets/videos/robot.mp4",
+    "poster": "assets/videos/robot.webp",
+    "duration": 31.35,
+    "title": "制作成果与物料介绍",
+    "description": "带字幕展示机器人动作、供电选择与原始物料记录，费用属于拍摄时记录。",
+    "width": 406,
+    "height": 720,
+    "size": 1862394,
+    "source": "robot.mp4"
+  }
+]

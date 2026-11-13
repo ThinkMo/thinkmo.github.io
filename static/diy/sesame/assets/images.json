@@ -1,0 +1,282 @@
+[
+  {
+    "id": "all-hardware",
+    "file": "assets/images/all-hardware.webp",
+    "width": 1400,
+    "height": 751
+  },
+  {
+    "id": "battery-connector-solder",
+    "file": "assets/images/battery-connector-solder.webp",
+    "width": 1400,
+    "height": 776
+  },
+  {
+    "id": "display-soldering",
+    "file": "assets/images/display-soldering.webp",
+    "width": 1400,
+    "height": 834
+  },
+  {
+    "id": "display-wires",
+    "file": "assets/images/display-wires.webp",
+    "width": 1322,
+    "height": 847
+  },
+  {
+    "id": "dont-mount",
+    "file": "assets/images/dont-mount.webp",
+    "width": 1400,
+    "height": 773
+  },
+  {
+    "id": "femur-joints",
+    "file": "assets/images/femur-joints.webp",
+    "width": 1400,
+    "height": 762
+  },
+  {
+    "id": "foot-joints",
+    "file": "assets/images/foot-joints.webp",
+    "width": 1400,
+    "height": 551
+  },
+  {
+    "id": "insert-battery",
+    "file": "assets/images/insert-battery.webp",
+    "width": 1400,
+    "height": 777
+  },
+  {
+    "id": "insert-display-enclosed",
+    "file": "assets/images/insert-display-enclosed.webp",
+    "width": 1321,
+    "height": 687
+  },
+  {
+    "id": "insert-display",
+    "file": "assets/images/insert-display.webp",
+    "width": 1400,
+    "height": 706
+  },
+  {
+    "id": "insert-frame",
+    "file": "assets/images/insert-frame.webp",
+    "width": 1400,
+    "height": 783
+  },
+  {
+    "id": "install-frame-motors",
+    "file": "assets/images/install-frame-motors.webp",
+    "width": 1400,
+    "height": 713
+  },
+  {
+    "id": "joint-horn-install-2",
+    "file": "assets/images/joint-horn-install-2.webp",
+    "width": 1400,
+    "height": 749
+  },
+  {
+    "id": "joint-horn-install",
+    "file": "assets/images/joint-horn-install.webp",
+    "width": 1400,
+    "height": 724
+  },
+  {
+    "id": "joints-preassem",
+    "file": "assets/images/joints-preassem.webp",
+    "width": 1400,
+    "height": 704
+  },
+  {
+    "id": "press-on-bottom-cover",
+    "file": "assets/images/press-on-bottom-cover.webp",
+    "width": 1400,
+    "height": 849
+  },
+  {
+    "id": "push-on-top-cover",
+    "file": "assets/images/push-on-top-cover.webp",
+    "width": 1400,
+    "height": 667
+  },
+  {
+    "id": "reference-configuration",
+    "file": "assets/images/reference-configuration.webp",
+    "width": 1400,
+    "height": 612
+  },
+  {
+    "id": "remove-headers",
+    "file": "assets/images/remove-headers.webp",
+    "width": 1400,
+    "height": 769
+  },
+  {
+    "id": "rotate-motor",
+    "file": "assets/images/rotate-motor.webp",
+    "width": 1400,
+    "height": 753
+  },
+  {
+    "id": "screw-on-bottom-cover",
+    "file": "assets/images/screw-on-bottom-cover.webp",
+    "width": 1333,
+    "height": 708
+  },
+  {
+    "id": "secure-distro-board",
+    "file": "assets/images/secure-distro-board.webp",
+    "width": 1400,
+    "height": 740
+  },
+  {
+    "id": "secure-distro-boardv2",
+    "file": "assets/images/secure-distro-boardv2.webp",
+    "width": 1400,
+    "height": 775
+  },
+  {
+    "id": "secure-electronics",
+    "file": "assets/images/secure-electronics.webp",
+    "width": 1400,
+    "height": 730
+  },
+  {
+    "id": "secure-top-cover",
+    "file": "assets/images/secure-top-cover.webp",
+    "width": 1400,
+    "height": 1011
+  },
+  {
+    "id": "securing-display-enclosed",
+    "file": "assets/images/securing-display-enclosed.webp",
+    "width": 1129,
+    "height": 788
+  },
+  {
+    "id": "securing-display",
+    "file": "assets/images/securing-display.webp",
+    "width": 1400,
+    "height": 758
+  },
+  {
+    "id": "servo-install-leg",
+    "file": "assets/images/servo-install-leg.webp",
+    "width": 1400,
+    "height": 756
+  },
+  {
+    "id": "sesame-angle-guide",
+    "file": "assets/images/sesame-angle-guide.webp",
+    "width": 1400,
+    "height": 639
+  },
+  {
+    "id": "sesame-done",
+    "file": "assets/images/sesame-done.webp",
+    "width": 1400,
+    "height": 739
+  },
+  {
+    "id": "switch-insert",
+    "file": "assets/images/switch-insert.webp",
+    "width": 1047,
+    "height": 646
+  },
+  {
+    "id": "top-cover-wiring",
+    "file": "assets/images/top-cover-wiring.webp",
+    "width": 1400,
+    "height": 743
+  },
+  {
+    "id": "wire-routing",
+    "file": "assets/images/wire-routing.webp",
+    "width": 1400,
+    "height": 869
+  },
+  {
+    "id": "wire-spot",
+    "file": "assets/images/wire-spot.webp",
+    "width": 1400,
+    "height": 736
+  },
+  {
+    "id": "zip-tie-bundles",
+    "file": "assets/images/zip-tie-bundles.webp",
+    "width": 1400,
+    "height": 933
+  },
+  {
+    "id": "proto-datalines",
+    "file": "assets/images/proto-datalines.webp",
+    "width": 964,
+    "height": 515
+  },
+  {
+    "id": "proto-headers",
+    "file": "assets/images/proto-headers.webp",
+    "width": 1042,
+    "height": 496
+  },
+  {
+    "id": "proto-power-rails",
+    "file": "assets/images/proto-power-rails.webp",
+    "width": 1400,
+    "height": 570
+  },
+  {
+    "id": "wire-managment",
+    "file": "assets/images/wire-managment.webp",
+    "width": 1213,
+    "height": 818
+  },
+  {
+    "id": "joints-orientation",
+    "file": "assets/images/joints-orientation.webp",
+    "width": 1385,
+    "height": 861
+  },
+  {
+    "id": "sliced-topcover",
+    "file": "assets/images/sliced-topcover.webp",
+    "width": 1396,
+    "height": 658
+  },
+  {
+    "id": "topcover-supports1",
+    "file": "assets/images/topcover-supports1.webp",
+    "width": 1287,
+    "height": 846
+  },
+  {
+    "id": "topcover-supports2",
+    "file": "assets/images/topcover-supports2.webp",
+    "width": 1400,
+    "height": 861
+  },
+  {
+    "id": "s2-mini-wiring-guide-new",
+    "file": "assets/images/s2-mini-wiring-guide-new.webp",
+    "width": 1400,
+    "height": 788
+  },
+  {
+    "id": "robot-sticker",
+    "file": "assets/images/robot-sticker.webp",
+    "width": 1400,
+    "height": 1400
+  },
+  {
+    "id": "sesame-topdown",
+    "file": "assets/images/sesame-topdown.webp",
+    "width": 1400,
+    "height": 621
+  },
+  {
+    "id": "robot-photo",
+    "file": "assets/images/robot-photo.webp"
+  }
+]

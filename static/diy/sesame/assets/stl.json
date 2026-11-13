@@ -1,0 +1,137 @@
+[
+  {
+    "id": "Bottom-Cover-v117",
+    "name": "Bottom-Cover-v117",
+    "file": "assets/stl/Bottom-Cover-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 73584,
+    "sha256": "faeb506eb51210cb16dfd4462d0b997db333d73b36c8394823cd8bdcd1f4c6a6"
+  },
+  {
+    "id": "Internal-Frame-v117",
+    "name": "Internal-Frame-v117",
+    "file": "assets/stl/Internal-Frame-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 332384,
+    "sha256": "649b8e6e80b520411cb0948d08197eead5d973098bb3e254e9200d9a924e25d6"
+  },
+  {
+    "id": "L1-v117",
+    "name": "L1-v117",
+    "file": "assets/stl/L1-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 359384,
+    "sha256": "081896568cc9776393c038d05ecc8caf01090c6971efebe799d064def4c92558"
+  },
+  {
+    "id": "L2-v117",
+    "name": "L2-v117",
+    "file": "assets/stl/L2-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 383384,
+    "sha256": "4e47eef40bf523aa0d7b0ac285f3086b3e6c5ccd347525f5c93bbf0c5bcd1fbf"
+  },
+  {
+    "id": "L3-v117",
+    "name": "L3-v117",
+    "file": "assets/stl/L3-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 102684,
+    "sha256": "136b0f28814629c654a45da1ebed93f496399c0d97007c6c02e1df4422be56a3"
+  },
+  {
+    "id": "L4-v117",
+    "name": "L4-v117",
+    "file": "assets/stl/L4-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 91384,
+    "sha256": "731819f13cd34efb4ab1b9121e9fae835a463ae11f6689670f7800113ec7b470"
+  },
+  {
+    "id": "R1-v117",
+    "name": "R1-v117",
+    "file": "assets/stl/R1-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 379784,
+    "sha256": "443f956016ad416699d8d5e56ab2fb0e36b10d42f02ff47ea02ae5986180e871"
+  },
+  {
+    "id": "R2-v117",
+    "name": "R2-v117",
+    "file": "assets/stl/R2-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 378984,
+    "sha256": "fab2770d0d7f1384c4888e2b3a25cd7a6729c2b4230894b4771a177b73c6452c"
+  },
+  {
+    "id": "R3-v117",
+    "name": "R3-v117",
+    "file": "assets/stl/R3-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 105884,
+    "sha256": "c2c35b4c948849878649d99e512af6702b5fcbbd2b30578bbec87ab15b8ec99e"
+  },
+  {
+    "id": "R4-v117",
+    "name": "R4-v117",
+    "file": "assets/stl/R4-v117.stl",
+    "group": "基础结构",
+    "basic": true,
+    "size": 94584,
+    "sha256": "131348a19491edad32f29d7a64109fdfadc3a03e01feedbf08dc1769e050938a"
+  },
+  {
+    "id": "magnetic-chainsaw-hat",
+    "name": "magnetic-chainsaw-hat",
+    "file": "assets/stl/top-covers/hats/magnetic-chainsaw-hat.stl",
+    "group": "可选帽子",
+    "basic": false,
+    "size": 55484,
+    "sha256": "63893f2010ff33bbfda0b8cb384c7b8be067bf80fee1cee03f23f4917107c961"
+  },
+  {
+    "id": "magnetic-modular-mount-hat",
+    "name": "magnetic-modular-mount-hat",
+    "file": "assets/stl/top-covers/hats/magnetic-modular-mount-hat.stl",
+    "group": "可选帽子",
+    "basic": false,
+    "size": 87284,
+    "sha256": "562f8246784666ea26f0a12b69ecff1e3d97d72603a7687ab778f58ebe2de3a6"
+  },
+  {
+    "id": "Top-Cover-Cat-v100",
+    "name": "Top-Cover-Cat-v100",
+    "file": "assets/stl/top-covers/Top-Cover-Cat-v100.stl",
+    "group": "顶盖三选一",
+    "basic": false,
+    "size": 195884,
+    "sha256": "a39dd37f19252db9206afe08d3284c33a3f2fdeea7cfc4ebb1731aae4a231296"
+  },
+  {
+    "id": "Top-Cover-Enclosed-v117",
+    "name": "Top-Cover-Enclosed-v117",
+    "file": "assets/stl/top-covers/Top-Cover-Enclosed-v117.stl",
+    "group": "顶盖三选一",
+    "basic": true,
+    "size": 184184,
+    "sha256": "07bf63aefab29fdde65b706b0b5fd62e283c62c8381022089598e00f32870a26"
+  },
+  {
+    "id": "Top-Cover-No-Ears-v100",
+    "name": "Top-Cover-No-Ears-v100",
+    "file": "assets/stl/top-covers/Top-Cover-No-Ears-v100.stl",
+    "group": "顶盖三选一",
+    "basic": false,
+    "size": 143284,
+    "sha256": "70a7235d26dc84995b86ff701ae40cdaa83eedf0592de8027239995f595c7f16"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "board": "LOLIN S2 Mini",
+  "chip": "ESP32-S2",
+  "fqbn": "esp32:esp32:lolin_s2_mini:CDCOnBoot=default,PartitionScheme=default",
+  "core": "3.3.10",
+  "ESP32Servo": "3.0.9",
+  "hardwareTested": false,
+  "builds": [
+    {
+      "kind": "tester",
+      "appBytes": 340224,
+      "files": [
+        {
+          "name": "tester-boot.bin",
+          "bytes": 31744,
+          "sha256": "8d7d4a4704cc2699ffe194fbbf9735d19a55d0fd64f8ff8fb0ea4ccb8e315797"
+        },
+        {
+          "name": "tester-app.bin",
+          "bytes": 348416,
+          "sha256": "338dcff2e7a350c95a3df514c2eaf3fe48b965a660a0dcd18adee6b037367eff"
+        }
+      ]
+    },
+    {
+      "kind": "main",
+      "appBytes": 1131920,
+      "files": [
+        {
+          "name": "main-boot.bin",
+          "bytes": 31744,
+          "sha256": "8d7d4a4704cc2699ffe194fbbf9735d19a55d0fd64f8ff8fb0ea4ccb8e315797"
+        },
+        {
+          "name": "main-app.bin",
+          "bytes": 1140112,
+          "sha256": "ff67d8747e8f7b2262b66dcd8d7abedccf112b1f8e2d63ff2d8b4c5cb5cf8803"
+        }
+      ]
+    }
+  ]
+}

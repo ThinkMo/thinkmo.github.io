@@ -1,4 +1,9 @@
-{{- $image := or (.Page.Resources.GetMatch .Destination) (resources.GetMatch .Destination) -}}
+{{- /* 外链图片不进入资源管线：Windows 下 resources.GetMatch 会因非法路径字符报错 */ -}}
+{{- $external := or (strings.HasPrefix .Destination "http://") (strings.HasPrefix .Destination "https://") (strings.HasPrefix .Destination "//") -}}
+{{- $image := "" -}}
+{{- if not $external -}}
+  {{- $image = or (.Page.Resources.GetMatch .Destination) (resources.GetMatch .Destination) -}}
+{{- end -}}
 {{- if $image -}}
   {{- partial "responsive-image.html" (dict
     "image" $image

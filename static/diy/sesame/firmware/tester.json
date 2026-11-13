@@ -1,0 +1,21 @@
+{
+  "name": "Sesame S2 Mini tester",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "new_install_improv_wait_time": 0,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        {
+          "path": "tester-boot.bin",
+          "offset": 4096
+        },
+        {
+          "path": "tester-app.bin",
+          "offset": 57344
+        }
+      ]
+    }
+  ]
+}

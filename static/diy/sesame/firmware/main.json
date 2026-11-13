@@ -1,0 +1,21 @@
+{
+  "name": "Sesame S2 Mini main",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "new_install_improv_wait_time": 0,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        {
+          "path": "main-boot.bin",
+          "offset": 4096
+        },
+        {
+          "path": "main-app.bin",
+          "offset": 57344
+        }
+      ]
+    }
+  ]
+}
