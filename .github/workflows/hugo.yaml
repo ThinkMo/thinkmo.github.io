@@ -45,17 +45,14 @@ jobs:
 
       - name: Configure Pages
         if: github.event_name != 'pull_request'
-        id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
-          SITE_URL: ${{ steps.pages.outputs.base_url || 'https://thinkmo.github.io' }}
         run: |
           hugo version
           hugo --gc --minify --panicOnWarning \
-            --baseURL "${SITE_URL%/}/" \
             --cacheDir "${RUNNER_TEMP}/hugo-cache"
 
       - name: Validate generated site

@@ -2,11 +2,13 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
+from xml.etree import ElementTree
 import sys
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else 'public').resolve()
 errors = set()
-origin = 'https://thinkmo.github.io/'
+origin = 'https://sunflw.com/'
+local_hosts = (urlsplit(origin).netloc, 'thinkmo.github.io')
 
 
 class Page(HTMLParser):
@@ -38,7 +40,7 @@ class Page(HTMLParser):
             if not value or value.startswith('#'):
                 continue
             url = urlsplit(urljoin(origin + self.relative, value))
-            if url.scheme not in ('http', 'https') or url.netloc != 'thinkmo.github.io':
+            if url.scheme not in ('http', 'https') or url.netloc not in local_hosts:
                 continue
             target = root / unquote(url.path).lstrip('/')
             if not target.is_file() and not (target / 'index.html').is_file():
@@ -48,6 +50,21 @@ class Page(HTMLParser):
 for required in ('index.html', '404.html', 'index.xml', 'sitemap.xml', 'robots.txt'):
     if not (root / required).is_file():
         errors.add(f'Missing required output: {required}')
+robots = root / 'robots.txt'
+if robots.is_file() and f'Sitemap: {urljoin(origin, "sitemap.xml")}' not in robots.read_text(encoding='utf-8').splitlines():
+    errors.add('robots.txt: missing canonical sitemap URL')
+sitemap = root / 'sitemap.xml'
+if sitemap.is_file():
+    try:
+        urls = ElementTree.parse(sitemap).findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')
+    except ElementTree.ParseError:
+        errors.add('sitemap.xml: invalid XML')
+    else:
+        if not urls:
+            errors.add('sitemap.xml: no URLs')
+        for url in urls:
+            if not (url.text or '').startswith(origin):
+                errors.add(f'sitemap.xml: incorrect canonical URL {url.text}')
 legacy_paths = Path(__file__).with_name('legacy-paths.txt').read_text(encoding='utf-8').splitlines()
 for relative in legacy_paths:
     if not (root / relative).is_file():

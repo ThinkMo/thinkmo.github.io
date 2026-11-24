@@ -123,3 +123,12 @@
     justify-content: flex-start;
   }
 }
+
+/* 窄屏下测评表横向滚动,避免单元格竖排换行 */
+@media (max-width: 768px) {
+  table:has(a[href^="media/eval"]) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

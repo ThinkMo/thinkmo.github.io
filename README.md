@@ -2,7 +2,7 @@
 
 个人门户与博客，使用 [Hugo](https://gohugo.io/) 和 [Noesis](https://github.com/josephhutch/noesis) 主题构建。
 
-站点地址：<https://thinkmo.github.io/>
+主站部署在腾讯云：<https://sunflw.com/>。GitHub Pages 镜像：<https://thinkmo.github.io/>。
 
 ## 目录结构
 
@@ -56,6 +56,9 @@ content/post/my-article/
 [resources.params]
   description = "封面说明"
 ```
+
+封面默认也会展示在文章正文前；若只用作列表缩略图（例如正文已有同画面视频），
+在 front matter 设置 `hideFeaturedImage = true` 即可隐藏正文前的重复大图。
 
 ## 内容发布范围
 
@@ -111,7 +114,8 @@ Projects/LLM/K8s 三个置顶话题之后），无需改任何模板。置顶顺
 - `assets/covers/`：各分类极简 SVG 封面，新增分类时补充同名文件即可
 - `layouts/_partials/disqus.html`：用 Giscus 替换 Disqus（参数需与
   `scripts/check_site.py` 校验项保持一致）
-- `layouts/_partials/meta-tags.html`：注入不蒜子统计脚本
+- `layouts/_partials/meta-tags.html`：注入不蒜子统计脚本及首页搜索引擎验证标签
+- `layouts/robots.txt`：开放抓取并声明站点地图地址
 - `assets/css/override.css`：首页经历时间线、评论区样式
 
 ## 本地预览
@@ -131,13 +135,21 @@ hugo --gc --minify --panicOnWarning
 python scripts/check_site.py public
 ```
 
-检查脚本使用 Python 3 标准库，验证生成页面、站内链接、静态资源、canonical URL、
+检查脚本使用 Python 3 标准库，验证生成页面、站内链接、静态资源、canonical URL、站点地图入口、
 Giscus 配置，`scripts/legacy-paths.txt` 中仍需保留的旧文章 URL 是否存在，
 以及 `scripts/retired-paths.txt` 中已下线的旧文章 URL 是否确实没有发布。
 
 ## 发布
 
-推送到默认分支后，GitHub Actions 自动构建并发布到 GitHub Pages（使用 Hugo
-extended `0.166.0`）。Pull Request 会执行相同的构建检查，但不会部署。
+腾讯云主站使用「构建与检查」生成的 `public/`，发布到 `sunflw.com` 对应的站点目录。
 
-构建产物位于 `public/`，由 Actions 生成，无需提交到仓库。
+推送到默认分支后，GitHub Actions 使用 Hugo extended `0.166.0` 构建并发布 GitHub Pages 镜像。
+Pull Request 会执行构建检查。两个站点共用 `hugo.toml` 的 `baseURL`，页面 canonical、站点地图和抓取入口均指向腾讯云主站。构建产物无需提交到仓库。
+
+## 搜索引擎收录
+
+Hugo 自动生成 `sitemap.xml`，`robots.txt` 指向 `https://sunflw.com/sitemap.xml`。
+
+1. 在 [Google Search Console](https://search.google.com/search-console) 为 `sunflw.com` 添加「网域」资源。在 DNSPod 为主机记录 `@` 添加 Google 给出的完整 TXT 记录。解析生效后回到 Search Console 验证，并保留 TXT 记录。
+2. 在 [百度搜索资源平台](https://ziyuan.baidu.com/) 添加 `https://sunflw.com/`，选择 HTML 标签验证。将标签的 `content` 值填入 `hugo.toml` 的 `[params.searchVerification]` → `baidu`，发布到腾讯云后完成验证。若 Google 使用「网址前缀」资源的 HTML 标签验证，填写同一节的 `google`。
+3. 腾讯云发布后，在 Google 的「站点地图」和百度的「资源提交 → 普通收录」提交 `https://sunflw.com/sitemap.xml`。百度的提交方式以账号后台开放的选项为准。

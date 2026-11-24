@@ -1,4 +1,4 @@
-baseURL = "https://thinkmo.github.io/"
+baseURL = "https://sunflw.com/"
 locale = "zh-CN"
 title = "新境世界"
 theme = "noesis"
@@ -31,6 +31,10 @@ enableRobotsTXT = true
 
   [params.navigation]
     rssInMenu = true
+
+  [params.searchVerification]
+    google = ""
+    baidu = "codeva-YAOOPgzCnM"
 
 # Giscus 评论(由 layouts/_partials/disqus.html 覆盖模板注入)
 [params.giscus]
