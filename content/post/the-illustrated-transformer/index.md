@@ -290,5 +290,6 @@ Q: FFN的作用是？
 A: 对每个 token 位置独立做非线性特征变换；增强模型非线性表达能力；先升维再降维，增加容量。
 
 Q: All in One Pic
-A: ![image.png](assets/mwuieyrr-image.png)
+A: ![image.png](assets/mwuimh6f-image.png)
+
 
