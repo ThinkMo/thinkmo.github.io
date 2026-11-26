@@ -179,6 +179,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 24px 0 1
 .console-log strong { color: var(--accent); font-weight: 500; }
 .source-footer { max-width: 1320px; padding: 19px 40px; margin: 0 auto; font-size: 11px; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); }
 .source-footer a { text-decoration: underline; }
+.footer-intro { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.workshop-visits { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.workshop-visits:has(#busuanzi_value_page_pv:empty) { display: none; }
 .footer-legal { width: 100%; text-align: center; }
 .resources-intro { margin-bottom: 30px; }
 .resources-intro h1 { font-size: 36px; }

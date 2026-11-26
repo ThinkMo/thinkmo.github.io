@@ -6,11 +6,6 @@ description = "探索与实践记录"
 [params]
   eyebrow = "AI Agent × Infra"
   writingTitle = "最新文章"
-  experience = [
-    "2020–2026 字节跳动",
-    "2017–2020 网易",
-    "2015–2017 淘宝"
-  ]
 
   [params.profile]
     name = "新镜"

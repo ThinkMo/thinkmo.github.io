@@ -82,16 +82,6 @@
           </div>
           {{ $aboutLabel := or $profile.name .Site.Title }}
           <aside class="home-about-rail" aria-label="{{ printf "关于 %s" $aboutLabel }}">
-            {{ with .Params.experience }}
-              <section class="rail-section">
-                <h2 class="rail-label">经历</h2>
-                <ul class="rail-topic-list">
-                  {{ range . }}
-                    <li>{{ . }}</li>
-                  {{ end }}
-                </ul>
-              </section>
-            {{ end }}
             {{ with .Site.Taxonomies.categories }}
             {{ $topics := slice "projects" "llm" "k8s" }}
             {{ range $name, $taxonomy := . }}

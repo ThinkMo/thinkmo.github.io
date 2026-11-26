@@ -14,6 +14,13 @@ enableRobotsTXT = true
 [taxonomies]
   category = "categories"
 
+# 仅首页生成 RSS，避免分类页/归档页生成多余 index.xml 制造抓取噪音
+[outputs]
+  home = ["html", "rss"]
+  section = ["html"]
+  taxonomy = ["html"]
+  term = ["html"]
+
 [params]
   description = "新境世界:AI Agent × Infra,OPC 探索与实践"
   mainSections = ["post"]

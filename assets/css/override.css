@@ -1,4 +1,8 @@
-/* 项目级样式覆盖:经历时间线与技能区块 */
+/* 项目级样式覆盖:首页内容区、评论区与页脚 */
+
+.post-meta p:has(#busuanzi_value_page_pv:empty) {
+  display: none;
+}
 
 .list-header-content {
   margin: 0 auto 2.5rem;
@@ -10,36 +14,6 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   opacity: 0.75;
-}
-
-/* 经历时间线 */
-.list-header-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.list-header-content ul li {
-  border-left: 2px solid currentColor;
-  opacity: 0.9;
-  padding: 0.1rem 0 0.1rem 1rem;
-  margin: 0 0 1rem;
-}
-
-.list-header-content ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.list-header-content li strong {
-  display: block;
-  margin-bottom: 0.15rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .list-header-content ul li {
-    border-left-color: #8a867c;
-  }
 }
 
 /* giscus 评论区 */

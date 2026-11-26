@@ -7,7 +7,7 @@
 ## 目录结构
 
 - `content/`：文章和独立页面
-  - `content/_index.md`：首页（个人定位与经历）
+  - `content/_index.md`：首页（个人定位）
   - `content/categories/`：话题页标题（K8s / LLM / Projects）
   - `content/post/`：博客文章
 - `static/`：图片等静态资源
@@ -116,7 +116,7 @@ Projects/LLM/K8s 三个置顶话题之后），无需改任何模板。置顶顺
   `scripts/check_site.py` 校验项保持一致）
 - `layouts/_partials/meta-tags.html`：注入不蒜子统计脚本及首页搜索引擎验证标签
 - `layouts/robots.txt`：开放抓取并声明站点地图地址
-- `assets/css/override.css`：首页经历时间线、评论区样式
+- `assets/css/override.css`：首页内容区、评论区与页脚样式
 
 ## 本地预览
 

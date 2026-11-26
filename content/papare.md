@@ -1,3 +1,11 @@
++++
+title = "基础笔记"
+[build]
+  render = false
+  list = false
+  publishResources = false
++++
+
 # 基础
 
 ## 算法与数据结构

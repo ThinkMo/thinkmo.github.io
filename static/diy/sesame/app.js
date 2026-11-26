@@ -39,7 +39,7 @@ function render(focus = false) {
     materials:()=>materials(data.materials,study), printing:()=>printing(data.parts), faq:troubleshooting,
     downloads:()=>downloads(data.release), search:()=>search(route.query), tools:()=>tools(device,settings,study)
   };
-  app.innerHTML = `${navigation(route)}<div class="studio-layout">${sidebar(route,study)}<main class="studio-main" id="main" tabindex="-1">${pages[route.page]()}</main></div><footer class="source-footer"><span>Sesame 开源机器人 / LOLIN S2 Mini 制作教材</span><span>原项目 Dorian Todd / <a href="assets/LICENSE" target="_blank" rel="noopener">Apache-2.0</a> / <a data-route href="?page=downloads">固件版本与资料来源</a></span><span class="footer-legal">© 2026 新境世界 <span aria-hidden="true">·</span> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2026086877号</a></span></footer>`;
+  app.innerHTML = `${navigation(route)}<div class="studio-layout">${sidebar(route,study)}<main class="studio-main" id="main" tabindex="-1">${pages[route.page]()}</main></div>`;
   document.title = `Sesame 制作工坊 — ${route.page==='course'?chapters.find(ch=>ch.id===route.chapter).title:{home:'学习总览',videos:'实拍视频',materials:'物料清单',printing:'打印件',faq:'排障与术语',downloads:'程序与资料',search:'搜索',tools:'烧录与调试'}[route.page]}`;
   const workbenchRoute = route.page==='tools' || (route.page==='course' && ['05','06'].includes(route.chapter));
   if (route.page==='course' && route.chapter==='05') mountServo3D(()=>settings.motor); else stopServo3D();
