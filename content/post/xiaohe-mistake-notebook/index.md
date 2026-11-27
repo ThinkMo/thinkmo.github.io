@@ -26,9 +26,9 @@ hideFeaturedImage = true
 
 **产品短片（约 45 秒）**
 
-<video controls playsinline preload="none" width="2160" height="3840" poster="images/short-promo-poster.webp" style="display:block;width:100%;max-width:24rem;height:auto;aspect-ratio:9/16;margin-inline:auto;border-radius:12px;" aria-label="小禾错题本产品短片：错题整理、动画讲解、打印练习与拍照批改">
-  <source src="media/xiaohe-short-promo.mp4" type="video/mp4">
-  你的浏览器不支持内嵌视频，可以<a href="media/xiaohe-short-promo.mp4">打开视频</a>观看。
+<video controls playsinline preload="none" width="2160" height="3840" poster="images/short-promo-poster.webp" style="display:block;width:100%;max-width:24rem;height:auto;aspect-ratio:9/16;margin-inline:auto;border-radius:12px;" aria-label="小禾拾题产品短片：错题整理、动画讲解、打印练习与拍照批改">
+  <source src="https://sunflw.com/media/xiaohe-shiti-4k.mp4" type="video/mp4">
+  你的浏览器不支持内嵌视频，可以<a href="https://sunflw.com/media/xiaohe-shiti-4k.mp4">打开视频</a>观看。
 </video>
 
 ## 测评

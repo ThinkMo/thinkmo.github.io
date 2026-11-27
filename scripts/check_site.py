@@ -42,6 +42,8 @@ class Page(HTMLParser):
             url = urlsplit(urljoin(origin + self.relative, value))
             if url.scheme not in ('http', 'https') or url.netloc not in local_hosts:
                 continue
+            if url.path.startswith('/media/'):
+                continue
             target = root / unquote(url.path).lstrip('/')
             if not target.is_file() and not (target / 'index.html').is_file():
                 errors.add(f'{self.relative}: missing {value}')
